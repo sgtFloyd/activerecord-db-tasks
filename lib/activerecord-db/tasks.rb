@@ -33,13 +33,13 @@ db_namespace = namespace :db do
 
   namespace :migrate do
     desc 'Runs the "up" for a given migration VERSION.'
-    task :up => :environment do
+    task :up => :establish_connection do
       raise 'VERSION is required' unless @version
       ActiveRecord::Migrator.run :up, ActiveRecord::Migrator.migrations_paths, @version
     end
 
     desc 'Runs the "down" for a given migration VERSION.'
-    task :down => :environment do
+    task :down => :establish_connection do
       raise 'VERSION is required' unless @version
       ActiveRecord::Migrator.run :down, ActiveRecord::Migrator.migrations_paths, @version
     end
