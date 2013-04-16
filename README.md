@@ -1,6 +1,6 @@
 activerecord-db-tasks
 =====================
-Rake db management tasks for ActiveRecord projects without Rails.  
+Rake db management tasks for projects that use ActiveRecord without Rails.  
 `rake db:create`, `rake db:migrate`, etc.
 
 Usage
